@@ -1,11 +1,10 @@
 package esprit.microservice1.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 public class Notification {
@@ -15,6 +14,9 @@ public class Notification {
     private String message;
     private Date date;
     private String email;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Etudiant> etudiants;
 
     public Notification() {
     }

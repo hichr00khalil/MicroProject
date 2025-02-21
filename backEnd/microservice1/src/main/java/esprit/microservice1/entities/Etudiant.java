@@ -1,10 +1,9 @@
 package esprit.microservice1.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 public class Etudiant {
@@ -17,6 +16,12 @@ public class Etudiant {
     private long cin;
     private String ecole;
     private Date DateNaissance;
+
+    @ManyToMany(mappedBy="etudiants", cascade = CascadeType.ALL)
+    private Set<Notification> Reservations;
+
+
+
 
     public Etudiant(String khalil, String nermine, int i, String yosser) {
     }

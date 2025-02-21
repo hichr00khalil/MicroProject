@@ -2,6 +2,9 @@ package esprit.microservice2.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Set;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -13,7 +16,9 @@ public class Foyer {
     private String nom;
     private int capacite;
 
-    @OneToOne
-    @JoinColumn(name = "universite_id", referencedColumnName = "id")
-    private Universite universite;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "foyer")
+    private Set<Foyer> blocs;
+
+
 }

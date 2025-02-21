@@ -27,3 +27,5 @@ public class Chambre {
     private TypeChambre typeC ;
 
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Payment> reservations;
