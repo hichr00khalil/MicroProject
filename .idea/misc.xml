@@ -4,13 +4,18 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+        <option value="$PROJECT_DIR$/backEnd/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/microservice1/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/microservice2/pom.xml" />
-        <option value="$PROJECT_DIR$/backEnd/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservice3/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservice5/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservice4/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservice6/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
