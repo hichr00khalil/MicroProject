@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gataway" />
+        <module name="config-server" />
         <module name="microservice1 (3)" />
         <module name="microservice1 (2)" />
         <module name="eureka" />
@@ -24,6 +25,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="gataway" options="-parameters" />
       <module name="gateway" options="-parameters" />
