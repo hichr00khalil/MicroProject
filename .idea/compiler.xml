@@ -9,18 +9,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="gataway" />
         <module name="config-server" />
-        <module name="microservice1 (3)" />
-        <module name="microservice1 (2)" />
         <module name="eureka" />
         <module name="microservice6" />
         <module name="microservice5" />
-        <module name="microservice1 (1)" />
+        <module name="microservice2" />
         <module name="microservice4" />
+        <module name="microservice3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gateway" target="17" />
-      <module name="microservice1" target="17" />
+      <module name="microservice1 (1)" target="17" />
+      <module name="microservice1 (2)" target="17" />
+      <module name="microservice1 (3)" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -33,6 +34,8 @@
       <module name="microservice1 (1)" options="-parameters" />
       <module name="microservice1 (2)" options="-parameters" />
       <module name="microservice1 (3)" options="-parameters" />
+      <module name="microservice2" options="-parameters" />
+      <module name="microservice3" options="-parameters" />
       <module name="microservice4" options="-parameters" />
       <module name="microservice5" options="-parameters" />
       <module name="microservice6" options="-parameters" />
