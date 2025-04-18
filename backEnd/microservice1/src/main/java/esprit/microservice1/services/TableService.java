@@ -30,13 +30,6 @@ public class TableService implements ITableService{
         return repository.save(table);
     }
 
-    public Ttable updateTable(Long id, Ttable newTable) {
-        Ttable existing = getTableById(id);
-        existing.setNumTab(newTable.getNumTab());
-        existing.setCapacite(newTable.getCapacite());
-        existing.setStatut(newTable.getStatut());
-        return repository.save(existing);
-    }
 
     public void deleteTable(Long id) {
         repository.deleteById(id);

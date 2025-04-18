@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class ClientRestApi {
 
-    private final ReservationService reservationService;
+    ReservationService reservationService;
 
     @GetMapping("/hello")
     public String sayHello() {

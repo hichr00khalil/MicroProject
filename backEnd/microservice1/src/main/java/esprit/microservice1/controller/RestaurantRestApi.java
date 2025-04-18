@@ -35,10 +35,6 @@ ITableService iTableService;
         return iTableService.createTable(table);
     }
 
-    @PutMapping("/{id}")
-    public Ttable updateTable(@PathVariable Long id, @RequestBody Ttable table) {
-        return iTableService.updateTable(id, table);
-    }
 
     @DeleteMapping("/{id}")
     public void deleteTable(@PathVariable Long id) {

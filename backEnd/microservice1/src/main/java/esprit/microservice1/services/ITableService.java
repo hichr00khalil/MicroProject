@@ -8,6 +8,5 @@ public interface ITableService {
     public List<Ttable> getAllTables();
     public Ttable getTableById(Long id);
     public Ttable createTable(Ttable table);
-    public Ttable updateTable(Long id, Ttable newTable);
     public void deleteTable(Long id);
 }
