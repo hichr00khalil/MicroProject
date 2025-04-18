@@ -22,7 +22,6 @@ public class Client {
     private String nom;
     private String contact;
 
-    @OneToMany
-    private Set<Reservation> reservations;
+
 
 }

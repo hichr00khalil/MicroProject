@@ -24,8 +24,6 @@ public class Reservation {
     private Time heure;
     private int nbrPersonne;
 
-    @ManyToOne
-    private Client client;
 
 
 }
