@@ -9,20 +9,24 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TableListComponent } from './components/table-list/table-list.component';
 import { ListReclamationComponent } from './reclamation/list-reclamation/list-reclamation.component';
 import { AddReclamationComponent } from './reclamation/add-reclamation/add-reclamation.component';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     ReservationComponent,
     TableListComponent,
     ListReclamationComponent,
-    AddReclamationComponent
+    AddReclamationComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule   
     
   ],
   providers: [],
