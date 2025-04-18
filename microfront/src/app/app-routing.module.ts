@@ -5,7 +5,6 @@ import { ReservationComponent } from './reservation/reservation.component'; // I
 import { TableListComponent } from './components/table-list/table-list.component';
 import { CommonModule } from '@angular/common';
 const routes: Routes = [
-  { path: '', redirectTo: '/reservation', pathMatch: 'full' }, // Default route
   { path: 'reservation', component: ReservationComponent }, 
   { path: 'restauration', component: TableListComponent }, // Define the reservation route
   // Add other routes as needed
