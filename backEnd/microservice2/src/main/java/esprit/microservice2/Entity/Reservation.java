@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.management.Notification;
 import java.sql.Time;
 import java.util.Date;
+import java.util.Set;
 
 
 @Entity
@@ -26,6 +28,7 @@ public class Reservation {
 
     @ManyToOne
     private Client client;
-
+@OneToMany
+private Set<Notification> notifications;
 
 }

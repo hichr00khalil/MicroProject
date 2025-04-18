@@ -1,0 +1,78 @@
+<div class="notification-container">
+  <h2>Notifications</h2>
+
+  <div class="filter-section">
+    <div class="email-filter">
+      <input
+        type="email"
+        [(ngModel)]="userEmail"
+        placeholder="Enter email to filter notifications"
+        class="email-input"
+      >
+      <button (click)="loadUserNotifications()" class="btn btn-primary">Filter</button>
+    </div>
+
+    <div class="filter-options">
+      <label>
+        <input type="radio" name="filterType" [(ngModel)]="filterType" value="all">
+        All
+      </label>
+      <label>
+        <input type="radio" name="filterType" [(ngModel)]="filterType" value="read">
+        Read
+      </label>
+      <label>
+        <input type="radio" name="filterType" [(ngModel)]="filterType" value="unread">
+        Unread
+      </label>
+    </div>
+
+    <button (click)="loadAllNotifications()" class="btn btn-secondary">Reset Filters</button>
+    <button (click)="deleteOldNotifications()" class="btn btn-danger">Delete Old Notifications</button>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <div *ngIf="loading" class="loading-spinner">
+    Loading...
+  </div>
+
+  <div *ngIf="!loading && notifications.length === 0" class="no-notifications">
+    No notifications found.
+  </div>
+
+  <div class="notification-container-layout">
+    <div class="notification-list">
+      <app-notification-item
+        *ngFor="let notification of notifications"
+        [notification]="notification"
+        (delete)="deleteNotification($event)"
+        (markRead)="markAsRead($event)"
+        (markUnread)="markAsUnread($event)"
+        (click)="selectNotification(notification)"
+        [class.selected]="selectedNotification && selectedNotification.id === notification.id"
+      ></app-notification-item>
+    </div>
+
+    <div class="notification-detail-panel" *ngIf="selectedNotification">
+      <div class="notification-detail">
+        <div class="notification-header">
+          <h3>Détails de la notification</h3>
+          <span class="notification-status" [ngClass]="{'read': selectedNotification.read, 'unread': !selectedNotification.read}">
+            {{ selectedNotification.read ? 'Lu' : 'Non lu' }}
+          </span>
+        </div>
+
+        <div class="notification-content">
+          <div class="notification-info">
+            <p><strong>Message:</strong> {{ selectedNotification.message }}</p>
+            <p><strong>Date:</strong> {{ formatDate(selectedNotification.date) }}</p>
+            <p><strong>Destinataire:</strong> {{ selectedNotification.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

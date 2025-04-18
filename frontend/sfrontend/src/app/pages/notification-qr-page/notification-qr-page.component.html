@@ -1,0 +1,44 @@
+<div class="qr-page-container">
+  <div *ngIf="loading" class="loading">
+    Chargement de la notification...
+  </div>
+  
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+  
+  <div *ngIf="notification && !loading && !error" class="qr-content">
+    <h1>QR Code pour la notification</h1>
+    
+    <div class="notification-details">
+      <h2>Détails de la notification</h2>
+      <div class="detail-item">
+        <span class="label">Message:</span>
+        <span class="value">{{ notification.message }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Date:</span>
+        <span class="value">{{ formatDate(notification.date) }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Destinataire:</span>
+        <span class="value">{{ notification.email }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Statut:</span>
+        <span class="value" [ngClass]="{'read': notification.read, 'unread': !notification.read}">
+          {{ notification.read ? 'Lu' : 'Non lu' }}
+        </span>
+      </div>
+    </div>
+    
+    <div class="qr-image">
+      <img [src]="qrCodeUrl" alt="QR Code de la notification" />
+      <p class="qr-instructions">Scannez ce QR code pour partager cette notification</p>
+    </div>
+    
+    <div class="actions">
+      <button class="back-button" routerLink="/notifications">Retour à la liste</button>
+    </div>
+  </div>
+</div>

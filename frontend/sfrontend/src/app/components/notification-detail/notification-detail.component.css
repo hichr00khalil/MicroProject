@@ -1,0 +1,92 @@
+.notification-detail {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.notification-status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.read {
+  background-color: #e0e0e0;
+  color: #555;
+}
+
+.unread {
+  background-color: #1890ff;
+  color: white;
+}
+
+.notification-content {
+  padding: 10px 0;
+}
+
+.notification-info p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.notification-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.qrcode-btn, .qrcode-page-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrcode-btn {
+  background-color: #1890ff;
+  color: white;
+  border: none;
+}
+
+.qrcode-btn:hover {
+  background-color: #096dd9;
+}
+
+.qrcode-page-btn {
+  background-color: #52c41a;
+  color: white;
+  border: none;
+}
+
+.qrcode-page-btn:hover {
+  background-color: #389e0d;
+}
+
+.qrcode-section {
+  margin-top: 20px;
+}

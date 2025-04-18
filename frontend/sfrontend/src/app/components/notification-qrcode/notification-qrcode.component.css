@@ -1,0 +1,35 @@
+.qrcode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.qrcode-image {
+  margin: 10px 0;
+}
+
+.qrcode-image img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: white;
+}
+
+.qrcode-info {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+h3 {
+  color: #333;
+  margin-bottom: 10px;
+}

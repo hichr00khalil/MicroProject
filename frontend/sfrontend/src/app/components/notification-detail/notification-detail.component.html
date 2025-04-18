@@ -1,0 +1,30 @@
+<div class="notification-detail" *ngIf="notification">
+  <div class="notification-header">
+    <h2>Détails de la notification</h2>
+    <span class="notification-status" [ngClass]="{'read': notification.read, 'unread': !notification.read}">
+      {{ notification.read ? 'Lu' : 'Non lu' }}
+    </span>
+  </div>
+
+  <div class="notification-content">
+    <div class="notification-info">
+      <p><strong>Message:</strong> {{ notification.message }}</p>
+      <p><strong>Date:</strong> {{ formatDate(notification.date) }}</p>
+      <p><strong>Destinataire:</strong> {{ notification.email }}</p>
+      <p *ngIf="notification.createdAt"><strong>Créée le:</strong> {{ formatDate(notification.createdAt) }}</p>
+    </div>
+
+    <div class="notification-actions">
+      <button (click)="toggleQRCode()" class="qrcode-btn">
+        {{ showQRCode ? 'Masquer le QR Code' : 'Afficher le QR Code' }}
+      </button>
+      <a [routerLink]="['/notifications', notification.id, 'qr']" class="qrcode-page-btn">
+        Ouvrir la page QR Code
+      </a>
+    </div>
+
+    <div *ngIf="showQRCode" class="qrcode-section">
+      <app-notification-qrcode [notification]="notification"></app-notification-qrcode>
+    </div>
+  </div>
+</div>

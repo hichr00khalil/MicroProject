@@ -1,0 +1,9 @@
+<div class="qrcode-container">
+  <h3>QR Code pour la notification</h3>
+  <div class="qrcode-image">
+    <img *ngIf="qrCodeUrl" [src]="qrCodeUrl" alt="QR Code de la notification" />
+  </div>
+  <div class="qrcode-info">
+    <p>Scannez ce QR code pour partager cette notification</p>
+  </div>
+</div>

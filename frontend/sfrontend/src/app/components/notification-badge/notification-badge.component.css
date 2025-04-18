@@ -1,0 +1,40 @@
+.notification-badge-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.notification-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+.notification-icon:hover {
+  background-color: #e0e0e0;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: #f5222d;
+  border-radius: 10px;
+}

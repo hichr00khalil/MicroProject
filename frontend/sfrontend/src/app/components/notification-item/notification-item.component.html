@@ -1,0 +1,26 @@
+<div class="notification-item" [ngClass]="{'unread': !notification.read}">
+  <div class="notification-content">
+    <div class="notification-header">
+      <span class="notification-date">{{ formatDate(notification.date) }}</span>
+      <span class="notification-status" [ngClass]="{'read': notification.read, 'unread': !notification.read}">
+        {{ notification.read ? 'Read' : 'Unread' }}
+      </span>
+    </div>
+    <div class="notification-message">{{ notification.message }}</div>
+    <div class="notification-email">For: {{ notification.email }}</div>
+  </div>
+  <div class="notification-actions">
+    <button *ngIf="!notification.read" (click)="onMarkAsRead($event)" class="action-btn read-btn">
+      Mark as Read
+    </button>
+    <button *ngIf="notification.read" (click)="onMarkAsUnread($event)" class="action-btn unread-btn">
+      Mark as Unread
+    </button>
+    <button (click)="onSendEmail($event)" class="action-btn email-btn">
+      Send Email
+    </button>
+    <button (click)="onDelete($event)" class="action-btn delete-btn">
+      Delete
+    </button>
+  </div>
+</div>

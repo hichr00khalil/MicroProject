@@ -1,0 +1,28 @@
+<div class="app-container">
+  <header class="app-header">
+    <div class="logo">
+      <h1>{{ title }}</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/notifications" routerLinkActive="active">Notifications</a></li>
+        <li><a routerLink="/notifications/create" routerLinkActive="active">Create Notification</a></li>
+      </ul>
+    </nav>
+    <div class="user-actions">
+      <app-notification-badge [email]="userEmail"></app-notification-badge>
+      <div class="user-info">
+        <span>{{ userEmail }}</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2024 CoffeeManager - All rights reserved</p>
+  </footer>
+</div>
