@@ -3,19 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ReservationComponent } from './reservation/reservation.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TableListComponent } from './components/table-list/table-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ReservationComponent
+    ReservationComponent,
+    TableListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule 
+    AppRoutingModule ,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
