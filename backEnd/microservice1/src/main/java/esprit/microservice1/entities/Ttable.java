@@ -1,6 +1,5 @@
 package esprit.microservice1.entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,7 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Table {
+public class Ttable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +20,4 @@ public class Table {
 
     @Enumerated(EnumType.STRING)
     private Statut statut;
-
-    @ManyToOne
-    private Restaurant restaurant;
 }

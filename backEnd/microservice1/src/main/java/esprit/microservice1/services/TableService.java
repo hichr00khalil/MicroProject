@@ -1,4 +1,44 @@
 package esprit.microservice1.services;
 
-public class TableService {
+import esprit.microservice1.entities.Ttable;
+import esprit.microservice1.repositories.TableRepository;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Slf4j
+@AllArgsConstructor
+@Service
+public class TableService implements ITableService{
+
+
+
+    private TableRepository repository;
+
+    public List<Ttable> getAllTables() {
+        return repository.findAll();
+    }
+
+    public Ttable getTableById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Table introuvable avec l'id: " + id));
+    }
+
+    public Ttable createTable(Ttable table) {
+        return repository.save(table);
+    }
+
+    public Ttable updateTable(Long id, Ttable newTable) {
+        Ttable existing = getTableById(id);
+        existing.setNumTab(newTable.getNumTab());
+        existing.setCapacite(newTable.getCapacite());
+        existing.setStatut(newTable.getStatut());
+        return repository.save(existing);
+    }
+
+    public void deleteTable(Long id) {
+        repository.deleteById(id);
+    }
 }
