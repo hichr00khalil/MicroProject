@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("mic2/")
-@CrossOrigin(origins = "http://localhost:4200")
 public class ClientRestApi {
 
      ReservationService reservationService;

@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class ReclamationService {
 
  
-  private apiUrl = 'http://localhost:8085/mic5'; 
+  private apiUrl = 'http://localhost:8087/mic5'; 
 
 
   constructor(private http: HttpClient) { }

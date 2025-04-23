@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("mic1/")
-@CrossOrigin(origins = "http://localhost:4200")
 public class RestaurantRestApi {
 
     @Autowired
