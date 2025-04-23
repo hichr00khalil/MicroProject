@@ -3,21 +3,26 @@ package esprit.microservice2.controller;
 import esprit.microservice2.Entity.Reservation;
 import esprit.microservice2.services.ReservationService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("mic2/")
-@AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200")
 public class ClientRestApi {
 
-    private final ReservationService reservationService;
+     ReservationService reservationService;
+
+    @Autowired
+    public ClientRestApi(ReservationService reservationService) {
+        this.reservationService = reservationService;
+    }
 
     @GetMapping("/hello")
     public String sayHello() {
-        return "Hello I'm Microservice 2 : Client ";
+        return "Hello I'm Microservice 2 : Client Amal";
     }
 
 

@@ -2,17 +2,19 @@ package esprit.microservice1.controller;
 
 import esprit.microservice1.entities.Ttable;
 import esprit.microservice1.services.ITableService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
+
 @RestController
 @RequestMapping("mic1/")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RestaurantRestApi {
-ITableService iTableService;
+
+    @Autowired
+    ITableService iTableService;
 
     @GetMapping("/hello")
     public String sayHello() {
@@ -35,10 +37,7 @@ ITableService iTableService;
         return iTableService.createTable(table);
     }
 
-    @PutMapping("/{id}")
-    public Ttable updateTable(@PathVariable Long id, @RequestBody Ttable table) {
-        return iTableService.updateTable(id, table);
-    }
+
 
     @DeleteMapping("/{id}")
     public void deleteTable(@PathVariable Long id) {

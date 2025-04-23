@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h2>Ajouter une Réclamation</h2>
+  
+    <form (ngSubmit)="onSubmit()" #reclamationForm="ngForm">
+      
+      <div class="form-group">
+        <label for="content">Contenu de la Réclamation :</label>
+        <input
+          type="text"
+          id="content"
+          name="content"
+          [(ngModel)]="content"
+          required
+          placeholder="Entrez votre réclamation"
+          class="form-control"
+        />
+      </div>
+  
+      <button type="submit" [disabled]="!reclamationForm.valid" class="submit-button">
+        Envoyer
+      </button>
+    </form>
+  </div>
+  

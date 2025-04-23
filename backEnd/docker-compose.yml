@@ -1,0 +1,142 @@
+services:
+  # Config Server
+  config-server:
+    build: ./config-server
+    image: backend-configserver:latest
+    container_name: config-server
+    ports:
+      - "8888:8888"
+    depends_on:
+      - eureka-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/hichr00khalil/MicroProject.git
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCH_PATHS=config
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT_LABEL=main
+    networks:
+      - microservices-network
+
+  # Eureka Server
+  eureka-server:
+    build: ./eureka
+    image: backend-eureka:latest
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-network
+
+  # Gateway Server
+  gateway-server:
+    build: ./gateway
+    image: backend-gateway:latest
+    container_name: gateway-service
+    ports:
+      - "8087:8087"
+    depends_on:
+      - eureka-server
+      - config-server
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka
+    networks:
+      - microservices-network
+
+  # Microservice 1
+  microservice1:
+    build: ./microservice1
+    image: backend-microservice1:latest
+    container_name: microservice1-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+      - config-server
+      - microservice1-db
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://microservice1-mysql:3306/micro1?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=yourpassword
+    networks:
+      - microservices-network
+
+  # MySQL Database for Microservice 1
+  microservice1-db:
+    image: mysql:8.0
+    container_name: microservice1-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=yourpassword
+      - MYSQL_DATABASE=micro1
+    ports:
+      - "3309:3306"  # Changed to a unique port
+    networks:
+      - microservices-network
+
+  # Microservice 2
+  microservice2:
+    build: ./microservice2
+    image: backend-microservice2:latest
+    container_name: microservice2-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+      - config-server
+      - microservice2-db
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://microservice2-mysql:3306/micro2?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=yourpassword
+    networks:
+      - microservices-network
+
+  # MySQL Database for Microservice 2
+  microservice2-db:
+    image: mysql:8.0
+    container_name: microservice2-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=yourpassword
+      - MYSQL_DATABASE=micro2
+    ports:
+      - "3310:3306"  # Changed to a unique port
+    networks:
+      - microservices-network
+
+  # Microservice 5
+  microservice5:
+    build: ./microservice5
+    image: backend-microservice5:latest
+    container_name: microservice5-service
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-server
+      - config-server
+      - microservice5-db
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://microservice5-mysql:3306/micro?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=yourpassword
+    networks:
+      - microservices-network
+
+  # MySQL Database for Microservice 5
+  microservice5-db:
+    image: mysql:8.0
+    container_name: microservice5-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=yourpassword
+      - MYSQL_DATABASE=micro
+    ports:
+      - "3311:3306"  # Changed to a unique port
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge

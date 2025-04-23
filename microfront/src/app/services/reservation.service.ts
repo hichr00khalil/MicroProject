@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ReservationService {
 
-  private baseUrl = 'http://localhost:8082/mic2'; // Adjust port if different
+  private baseUrl = 'http://localhost:8087/mic2'; // Adjust port if different
 
   constructor(private http: HttpClient) {}
 

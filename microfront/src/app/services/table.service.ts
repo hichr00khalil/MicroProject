@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TableService {
-  private apiUrl = 'http://localhost:8081/mic1';
+  private apiUrl = 'http://localhost:8087/mic1';
   constructor(private http: HttpClient) { }
 
   getAllTables(): Observable<Table[]> {

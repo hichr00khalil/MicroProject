@@ -4,6 +4,7 @@ import esprit.microservice1.entities.Ttable;
 import esprit.microservice1.repositories.TableRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class TableService implements ITableService{
 
 
 
+    @Autowired
     private TableRepository repository;
 
     public List<Ttable> getAllTables() {
@@ -30,13 +32,7 @@ public class TableService implements ITableService{
         return repository.save(table);
     }
 
-    public Ttable updateTable(Long id, Ttable newTable) {
-        Ttable existing = getTableById(id);
-        existing.setNumTab(newTable.getNumTab());
-        existing.setCapacite(newTable.getCapacite());
-        existing.setStatut(newTable.getStatut());
-        return repository.save(existing);
-    }
+
 
     public void deleteTable(Long id) {
         repository.deleteById(id);
