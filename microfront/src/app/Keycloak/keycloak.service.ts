@@ -11,7 +11,7 @@ export class KeycloakService {
   get keycloak() {
     if (!this._keycloak) {
       this._keycloak = new Keycloak({
-        url: 'http://localhost:8080',
+        url: 'http://localhost:8079',
         realm: 'Esprit-projects',
         clientId: 'mini_projet',
 
