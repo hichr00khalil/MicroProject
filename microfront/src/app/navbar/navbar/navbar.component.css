@@ -1,0 +1,38 @@
+/* Conteneur de la navbar */
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center; /* centre verticalement */
+    height: 100px; /* ajuste la hauteur si tu veux */
+  }
+  
+  /* Liste des liens */
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 3rem; /* espace entre les liens */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Liens */
+  .nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  /* Effet hover */
+  .nav-list li a:hover {
+    color: #ffcc00; /* jaune au survol */
+  }
+  
+  /* Lien actif */
+  .nav-list li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #ffcc00; /* soulignement pour actif */
+  }
+  

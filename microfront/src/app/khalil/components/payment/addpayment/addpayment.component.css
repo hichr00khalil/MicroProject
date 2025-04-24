@@ -1,0 +1,47 @@
+    .payment-form {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+    
+    .payment-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .payment-form label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    
+    .payment-form input,
+    .payment-form select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .payment-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #0086FB;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .payment-form button:disabled {
+        background-color: #ccc;
+    }
+    .error-message {
+        color: red;
+        font-size: 15px;
+        margin-top: 5px;
+    }
+    

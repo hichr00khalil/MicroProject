@@ -1,0 +1,25 @@
+<form class="payment-form" [formGroup]="factureForm" (ngSubmit)="onSubmit()">
+    <h2>🍽️ Add Facture</h2>
+  
+    <div class="form-group">
+      <label for="numero">Table Number :</label>
+      <input id="numero" formControlName="numero" type="text" />
+    </div>
+  
+    <div class="form-group">
+      <label for="montantTotale">Total Amount (DT):</label>
+      <input id="montantTotale" formControlName="montantTotale" type="number" />
+    </div>
+  
+    <div class="form-group">
+      <label for="statutPaiement">Pyament Status:</label>
+      <input id="statutPaiement" formControlName="statutPaiement" type="text"   />
+    </div>
+  
+    <button type="submit" [disabled]="factureForm.invalid">Add</button>
+  
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+  </form>
+  

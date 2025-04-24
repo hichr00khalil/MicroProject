@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="moduleMapping">
+      <map>
+        <entry key="microservice44" value="microservice1 (1)" />
+      </map>
+    </option>
+  </component>
+</project>

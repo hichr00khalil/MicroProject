@@ -1,0 +1,79 @@
+<div class="payment-form">
+    <h2>Payment Form</h2>
+  
+    <form (ngSubmit)="onSubmit()" #paymentForm="ngForm">
+      
+      <!-- NumTab (input field) -->
+      <div>
+        <label for="numTab">Table Number</label>
+        <input type="number" id="numTab" [value]="numTab" name="numTab" required disabled>
+        <div *ngIf="numTab === null" class="error-message">Transaction Number is required.</div>
+      </div>
+  
+      <!-- Payment Method Selection -->
+      <div>
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod" [(ngModel)]="payment.paymentMethod" name="paymentMethod" required>
+          <option value="CARTE">CARTE</option>
+          <option value="CASH">CASH</option>
+        </select>
+      </div>
+  
+      <!-- Payment Date (Default to current date) -->
+      <div>
+        <label for="paymentDate">Payment Date</label>
+        <input type="text" id="paymentDate" [(ngModel)]="payment.paymentDate" name="paymentDate" disabled value="{{payment.paymentDate | date:'yyyy-MM-dd'}}">
+      </div>
+  
+      <!-- Conditional Fields for 'CARTE' -->
+      <div *ngIf="payment.paymentMethod === 'CARTE'">
+        <div>
+          <label for="carte">Card Number</label>
+          <input type="text" id="carte" [(ngModel)]="payment.carte" name="carte" maxlength="16" required pattern="^\d{16}$" #carte="ngModel">
+          <div *ngIf="carte.invalid && carte.touched" class="error-message">
+            Card Number must be 16 digits.
+          </div>
+        </div>
+  
+        <div>
+          <label for="titulairecarte">Cardholder Name</label>
+          <input type="text" id="titulairecarte" [(ngModel)]="payment.titulairecarte" name="titulairecarte" required pattern="^[A-Za-z ]+$" #titulairecarte="ngModel">
+          <div *ngIf="titulairecarte.invalid && titulairecarte.touched" class="error-message">
+            Cardholder Name should only contain letters.
+          </div>
+        </div>
+  
+        <div>
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" [(ngModel)]="payment.cvv" name="cvv" maxlength="3" required pattern="^\d{3}$" #cvv="ngModel">
+          <div *ngIf="cvv.invalid && cvv.touched" class="error-message">
+            CVV must be a 3-digit number.
+          </div>
+        </div>
+  
+        <div>
+          <label for="jusqua">Expiry Date (MM/YYYY)</label>
+          <input 
+          type="text" 
+          id="jusqua" 
+          [(ngModel)]="payment.jusqua" 
+          name="jusqua" 
+          required 
+          pattern="^(0[1-9]|1[0-2])\/\d{4}$" 
+          #jusqua="ngModel">
+                    <div *ngIf="jusqua.invalid && jusqua.touched" class="error-message">
+            Expiry Date must be in the format MM/YYYY.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="!paymentForm.valid">Submit</button>
+  
+      <!-- Success/Error Message -->
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+    </form>
+  </div>
+  
