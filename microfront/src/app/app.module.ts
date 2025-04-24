@@ -11,6 +11,8 @@ import { ListReclamationComponent } from './reclamation/list-reclamation/list-re
 import { AddReclamationComponent } from './reclamation/add-reclamation/add-reclamation.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
+import { NotificationModule } from './notification/notification.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,10 +26,10 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule ,
+    AppRoutingModule,
     ReactiveFormsModule,
-    RouterModule   
-    
+    RouterModule,
+    NotificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

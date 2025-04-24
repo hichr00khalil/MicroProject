@@ -14,7 +14,7 @@
         <module name="microservice4" />
         <module name="microservice3" />
       </profile>
-      <profile name="Annotation profile for microservice2" enabled="true">
+      <profile name="Annotation profile for microservice5" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

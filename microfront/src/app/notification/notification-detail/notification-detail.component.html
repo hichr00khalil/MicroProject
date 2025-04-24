@@ -1,0 +1,104 @@
+<div class="container">
+  <h2>Notification Details</h2>
+
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!notification && !loading" class="alert alert-info">
+    Notification not found.
+  </div>
+
+  <div *ngIf="notification" class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <span>Notification #{{ notification.id }}</span>
+      <span class="badge" [ngClass]="notification.isRead ? 'bg-secondary' : 'bg-primary'">
+        {{ notification.isRead ? 'Read' : 'Unread' }}
+      </span>
+    </div>
+    <div class="card-body">
+      <div *ngIf="!editMode">
+        <h5 class="card-title">{{ notification.message }}</h5>
+        <p class="card-text" *ngIf="notification.createdAt">
+          Created: {{ notification.createdAt | date:'medium' }}
+        </p>
+        <p class="card-text" *ngIf="notification.reservationId">
+          Related to Reservation #{{ notification.reservationId }}
+        </p>
+      </div>
+
+      <form *ngIf="editMode" (ngSubmit)="updateNotification()">
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            name="message"
+            rows="3"
+            [(ngModel)]="notification.message"
+            required
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="reservationId" class="form-label">Reservation ID</label>
+          <input
+            type="number"
+            class="form-control"
+            id="reservationId"
+            name="reservationId"
+            [(ngModel)]="notification.reservationId"
+          >
+        </div>
+
+        <div class="mb-3 form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="isRead"
+            name="isRead"
+            [(ngModel)]="notification.isRead"
+          >
+          <label class="form-check-label" for="isRead">Mark as Read</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="button" class="btn btn-secondary ms-2" (click)="toggleEditMode()">Cancel</button>
+      </form>
+    </div>
+    <div class="card-footer">
+      <div class="d-flex justify-content-between">
+        <div>
+          <button
+            *ngIf="!editMode"
+            class="btn btn-primary me-2"
+            (click)="toggleEditMode()"
+          >
+            Edit
+          </button>
+          <button
+            *ngIf="!editMode && !notification.isRead"
+            class="btn btn-success me-2"
+            (click)="markAsRead()"
+          >
+            Mark as Read
+          </button>
+          <button
+            *ngIf="!editMode"
+            class="btn btn-danger"
+            (click)="deleteNotification()"
+          >
+            Delete
+          </button>
+        </div>
+        <a routerLink="/notifications" class="btn btn-secondary">Back to List</a>
+      </div>
+    </div>
+  </div>
+</div>

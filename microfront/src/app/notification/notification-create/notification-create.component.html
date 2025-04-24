@@ -1,0 +1,62 @@
+<div class="container">
+  <h2>Create Notification</h2>
+
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <div *ngIf="success" class="alert alert-success">
+    {{ success }}
+  </div>
+
+  <form (ngSubmit)="createNotification()" #notificationForm="ngForm">
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea
+        class="form-control"
+        id="message"
+        name="message"
+        rows="3"
+        [(ngModel)]="notification.message"
+        required
+      ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="reservationId" class="form-label">Reservation ID (Optional)</label>
+      <input
+        type="number"
+        class="form-control"
+        id="reservationId"
+        name="reservationId"
+        [(ngModel)]="notification.reservationId"
+      >
+    </div>
+
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="isRead"
+        name="isRead"
+        [(ngModel)]="notification.isRead"
+      >
+      <label class="form-check-label" for="isRead">Mark as Read</label>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!notificationForm.form.valid || loading"
+    >
+      Create Notification
+    </button>
+    <a routerLink="/notifications" class="btn btn-secondary ms-2">Cancel</a>
+  </form>
+</div>
