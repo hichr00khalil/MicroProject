@@ -1,0 +1,125 @@
+.container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  margin: 50px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 40px;
+}
+
+h2:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.list-group {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  transition: all 0.3s;
+  border-radius: 10px !important;
+  margin-bottom: 10px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding: 20px;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item-light {
+  opacity: 0.7;
+  background-color: #f8f9fa;
+}
+
+.unread-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff4444;
+  display: inline-block;
+  margin-right: 10px;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+
+.mb-1 {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px !important;
+  font-size: 1.1rem;
+  padding-left: 20px;
+}
+
+small {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background-color: #4285F4;
+  border-color: #4285F4;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #1a73e8;
+  border-color: #1a73e8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(26, 115, 232, 0.3);
+}
+
+.btn-danger {
+  background-color: #ea4335;
+  border-color: #ea4335;
+  transition: all 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #d33426;
+  border-color: #d33426;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(211, 52, 38, 0.3);
+}
+
+.alert {
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+
+.alert-info {
+  background-color: #e8f4fd;
+  border-color: #c6e2fc;
+  color: #0c5edb;
+}
+
+.alert-danger {
+  background-color: #fde8e8;
+  border-color: #fcc6c6;
+  color: #db0c0c;
+}
+
+.spinner-border {
+  color: #4285F4;
+}

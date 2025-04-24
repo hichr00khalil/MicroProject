@@ -16,6 +16,8 @@ import {InterceptorInterceptor} from "./interceptor/interceptor.interceptor";
 export function kcFactory(kcService: KeycloakService){
   return () => kcService.init();
 }
+import { NotificationModule } from './notification/notification.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +31,11 @@ export function kcFactory(kcService: KeycloakService){
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule ,
+    AppRoutingModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    NotificationModule
+
 
   ],
   providers: [
@@ -47,6 +51,7 @@ export function kcFactory(kcService: KeycloakService){
       useFactory: kcFactory,
       multi: true
     }
+   
   ],
   bootstrap: [AppComponent]
 })

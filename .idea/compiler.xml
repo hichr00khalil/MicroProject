@@ -28,16 +28,26 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="config-server" target="17" />
       <module name="configserver" target="17" />
+      <module name="eureka" target="17" />
+      <module name="gataway" target="17" />
       <module name="gateway" target="17" />
+      <module name="Keycloak" target="1.5" />
+      <module name="microservice1" target="17" />
       <module name="microservice1 (1)" target="17" />
       <module name="microservice1 (2)" target="17" />
       <module name="microservice1 (3)" target="17" />
+      <module name="microservice2" target="17" />
+      <module name="microservice3" target="17" />
+      <module name="microservice4" target="17" />
+      <module name="microservice5" target="17" />
+      <module name="microservice6" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Keycloak" options="-parameters" />
+      <module name="Keycloak" options="" />
       <module name="config-server" options="-parameters" />
       <module name="configserver" options="-parameters" />
       <module name="eureka" options="-parameters" />

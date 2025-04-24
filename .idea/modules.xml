@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/backEnd/Keycloak/Keycloak.iml" filepath="$PROJECT_DIR$/backEnd/Keycloak/Keycloak.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/S2A.iml" filepath="$PROJECT_DIR$/.idea/S2A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/config-server/config-server.iml" filepath="$PROJECT_DIR$/backEnd/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/eureka/eureka.iml" filepath="$PROJECT_DIR$/backEnd/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/gateway/gataway.iml" filepath="$PROJECT_DIR$/backEnd/gateway/gataway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/microservice1/microservice1.iml" filepath="$PROJECT_DIR$/backEnd/microservice1/microservice1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/microservice2/microservice2.iml" filepath="$PROJECT_DIR$/backEnd/microservice2/microservice2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/microservice3/microservice3.iml" filepath="$PROJECT_DIR$/backEnd/microservice3/microservice3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/microservice4/microservice4.iml" filepath="$PROJECT_DIR$/backEnd/microservice4/microservice4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/microservice5/microservice5.iml" filepath="$PROJECT_DIR$/backEnd/microservice5/microservice5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backEnd/microservice6/microservice6.iml" filepath="$PROJECT_DIR$/backEnd/microservice6/microservice6.iml" />
     </modules>
   </component>
 </project>
